@@ -1,17 +1,11 @@
 {
-    "name": "my-node-app",
-    "version": "1.0.0",
-    "description": "A simple Node.js app",
-    "main": "server.js",
-    "scripts": {
-      "test": "node test.js",  
-      "start": "node server.js"
-    },
-    "dependencies": {
-      "express": "^4.17.1"  
-    },
-    "devDependencies": {
-      "jest": "^27.0.0"  
-    }
+  "name": "your-project-name",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+  "test": "mocha"
+  },
+  "devDependencies": {
+    "mocha": "^10.6.0"
   }
-  
+}
