@@ -1,0 +1,37 @@
+stages:
+  - install
+  - test
+  - deploy
+
+variables:
+  NODE_ENV: 'production'
+
+cache:
+  paths:
+    - node_modules/
+
+install_dependencies:
+  stage: install
+  script:
+    - npm install
+  tags:
+    - runner-tag 
+
+run_tests:
+  stage: test
+  script:
+    - npm test
+  tags:
+    - runner-tag 
+
+deploy:
+  stage: deploy
+  script:
+    - echo "Deploying application..."
+  environment:
+    name: production
+    url: https://example.com
+  only:
+    - main 
+  tags:
+    - runner-tag 
