@@ -1,37 +1,39 @@
+# Use the Docker image with Docker installed.
+image: docker:latest
+
+# Define services required for Docker.
+services:
+  - docker:dind
+
+# Define stages in the pipeline
 stages:
-  - install
+  - build
   - test
   - deploy
 
-variables:
-  NODE_ENV: 'production'
-
-cache:
-  paths:
-    - node_modules/
-
-install_dependencies:
-  stage: install
+# Define the 'build' stage to build the Docker image
+build_image:
+  stage: build
   script:
-    - npm install
+    - docker build -t my-node-app .
   tags:
-    - runner-tag 
+    - shell
 
+# Define the 'test' stage
 run_tests:
   stage: test
   script:
-    - npm test
+    - docker run --rm my-node-app npm test
   tags:
-    - runner-tag 
+    - shell
 
+# Define the 'deploy' stage (customize as needed)
 deploy:
   stage: deploy
   script:
     - echo "Deploying application..."
-  environment:
-    name: production
-    url: https://example.com
+    # Add deployment commands here
   only:
-    - main 
+    - main
   tags:
-    - runner-tag 
+    - shell
