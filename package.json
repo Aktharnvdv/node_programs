@@ -1,26 +1,9 @@
 {
-  "name": "node_programs",
-  "version": "1.0.0",
-  "description": "CI/CD setup example",
-  "main": "index.js",
   "scripts": {
-    "test": "echo 'No tests specified' && exit 0",
-    "lint": "eslint .",
-    "build": "echo 'No build step specified' && exit 0"
+    "test": "jest"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Aktharnvdv/node_programs.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/Aktharnvdv/node_programs/issues"
-  },
-  "homepage": "https://github.com/Aktharnvdv/node_programs#readme",
   "devDependencies": {
-    "chai": "^5.1.1",
-    "mocha": "^10.6.0"
+    "jest": "^29.7.0",
+    "supertest": "^7.0.0"
   }
 }
