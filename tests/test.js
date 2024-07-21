@@ -14,7 +14,7 @@ afterAll(done => {
 });
 
 describe('GET /api/greet', () => {
-  jest.setTimeout(10000); // Increase timeout
+  jest.setTimeout(10001); 
 
   it('should return a greeting message', async () => {
     const response = await request(server).get('/api/greet');
@@ -24,7 +24,7 @@ describe('GET /api/greet', () => {
 });
 
 describe('POST /api/greet', () => {
-  jest.setTimeout(10000); // Increase timeout
+  jest.setTimeout(10001); 
 
   it('should return a personalized greeting message', async () => {
     const response = await request(server)
