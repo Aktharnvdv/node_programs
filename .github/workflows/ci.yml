@@ -22,9 +22,10 @@ jobs:
       run: npm install
 
     - name: Run tests
-      run: |
-        npm test
-        npm run test2
+      run: npm test
+
+    - name: Run additional tests
+      run: npm run test2
 
     - name: Build Docker image
       run: docker build . -t ${{ secrets.DOCKER_USERNAME }}/node_programs:${{ github.sha }}
