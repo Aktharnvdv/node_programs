@@ -1,7 +1,9 @@
 {
   "scripts": {
-    "test": "jest"
-  },
+    "test": "jest",
+    "test2": "node test/test2.js"
+  }
+  ,
   "devDependencies": {
     "jest": "^29.7.0",
     "supertest": "^7.0.0"
